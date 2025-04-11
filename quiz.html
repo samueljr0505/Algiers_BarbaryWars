@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbary Wars Quiz</title>
+    <style>
+        /* General Styles */
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        line-height: 1.6;
+    }
+    html, body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    body {
+    flex: 1;
+    }
+
+    .container {
+    flex: 1;
+    }
+    h1{
+        color: #333;
+        text-align: center;
+    } 
+    h2, h3 {
+     color: #333;
+    }
+    
+    a {
+        text-decoration: none;
+        color: white;
+        }
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+        nav a {
+            margin: 0 15px;
+            font-size: 18px;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        /* Quiz Content */
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 80px auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        #question-container {
+            margin-bottom: 20px;
+        }
+        .option {
+            display: block;
+            padding: 12px;
+            margin-bottom: 10px;
+            background-color: #eee;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .option:hover {
+            background-color: #ddd;
+        }
+        .option.correct {
+            background-color: #4caf50;
+            color: white;
+        }
+        .option.incorrect {
+            background-color: #f44336;
+            color: white;
+        }
+        /* Start Button */
+        #start-btn {
+            padding: 12px 24px;
+    font-size: 18px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+    display: block;
+    margin: 20px auto; /* Center horizontally and add spacing */
+            
+        }
+        #start-btn:hover {
+            background-color: #45a049;
+        }
+        #score {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+        nav a.active {
+            background-color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="history.html">Research and Analysis</a>
+        <a href="worksheets.html">Worksheets</a>
+        <a href="quiz.html" class="nav-link active">Quiz</a>
+    </nav>
+
+    <div class="container">
+        <h1>Barbary Wars Quiz</h1>
+        <p>Test your knowledge about the Barbary Wars!</p>
+        
+        <div id="question-container"></div>
+        <button id="start-btn" onclick="startQuiz()">Start Quiz</button>
+        <div id="score"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Barbary Wars - Algiers. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const questions = [
+            {
+                question: "When did the Barbary Wars start?",
+                options: ["1785", "1801", "1812", "1850"],
+                answer: "1801"
+            },
+            {
+                question: "Who was the US President during the Barbary Wars?",
+                options: ["George Washington", "Thomas Jefferson", "James Madison", "Abraham Lincoln"],
+                answer: "Thomas Jefferson"
+            },
+            {
+                question: "Which country was not a Barbary State involved in the Barbary Wars?",
+                options: ["Algiers", "Tripoli", "Tunisia", "Morocco", "Egypt"],
+                answer: "Egypt"
+            },
+            {
+                question: "Which US naval officer played a key role in the Barbary Wars?",
+                options: ["Stephen Decatur", "John Paul Jones", "Admiral Farragut", "Oliver Hazard Perry"],
+                answer: "Stephen Decatur"
+            },
+            {
+                question: "Which North African city was a major base for Barbary pirates during the early 19th century, frequently raiding American and European ships?",
+                options: ["Tangier", "Algiers", "Tripoli", "Tunis"],
+                answer: "Algiers"
+            },
+            {
+                question: "What was one of the primary reasons for the U.S. involvement in the Barbary Wars?",
+                options: ["To expand trade routes to Asia", "To prevent British influence in North Africa", "To support French colonial ambitions", "To stop Barbary corsairs from capturing American ships and enslaving sailors"],
+                answer: "To stop Barbary corsairs from capturing American ships and enslaving sailors"
+            },
+            {
+                question: "What was the outcome of the Second Barbary War (1815) with Algiers?",
+                options: ["Algiers agreed to stop demanding tribute and release American prisoners", "Algiers successfully resisted American forces and continued piracy", "The U.S. withdrew without securing any agreements", "The British intervened and mediated a settlement"],
+                answer: "Algiers agreed to stop demanding tribute and release American prisoners"
+            },
+            {
+                question: "Which treaty formally ended hostilities between the United States and Algiers after the Second Barbary War?",
+                options: ["Treaty of Paris", "Treaty of Ghent", "Treaty of Algiers", "Treaty of Tripoli"],
+                answer: "Treaty of Algiers"
+            },
+            {
+                question: "Why was Algiers considered strategically important to the Barbary States?",
+                options: ["It controlled key trade routes between the Atlantic and Mediterranean", " It was a major exporter of spices and silk", "It served as the capital of the Ottoman Empire", "It was the only North African port accessible year-round"],
+                answer: "It controlled key trade routes between the Atlantic and Mediterranean"
+            },
+            {
+                question: "Who was the Dey of Algiers during the U.S. negotiations following the Second Barbary War?",
+                options: ["Ahmed Bey", "Hammuda Pasha", "Omar Agha", "Hussein Dey"],
+                answer: "Omar Agha"
+            },
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function startQuiz() {
+            document.getElementById("start-btn").style.display = "none"; // Hide start button
+            currentQuestionIndex = 0;
+            score = 0;
+            document.getElementById("score").textContent = "";
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const question = questions[currentQuestionIndex];
+            const questionContainer = document.getElementById("question-container");
+
+            questionContainer.innerHTML = `
+                <h2>${question.question}</h2>
+                ${question.options.map(option => `
+                    <div class="option" onclick="checkAnswer(this, '${option}')">${option}</div>
+                `).join('')}
+            `;
+        }
+
+        function checkAnswer(element, selectedOption) {
+            const correctAnswer = questions[currentQuestionIndex].answer;
+
+            if (selectedOption === correctAnswer) {
+                element.classList.add('correct');
+                score++;
+            } else {
+                element.classList.add('incorrect');
+                // Highlight the correct answer
+                document.querySelectorAll('.option').forEach(option => {
+                    if (option.textContent === correctAnswer) {
+                        option.classList.add('correct');
+                    }
+                });
+            }
+
+            setTimeout(() => {
+                currentQuestionIndex++;
+                if (currentQuestionIndex < questions.length) {
+                    showQuestion();
+                } else {
+                    showResult();
+                }
+            }, 1000);
+        }
+
+        function showResult() {
+            const questionContainer = document.getElementById("question-container");
+            questionContainer.innerHTML = `<h2>Quiz Finished!</h2>`;
+            document.getElementById("score").textContent = `Your score: ${score} / ${questions.length}`;
+        }
+    </script>
+</body>
+</html>

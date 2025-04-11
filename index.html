@@ -1,10 +1,142 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Barbary Wars - Algiers</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+        }
+        h3 {
+            color: #ffffff;
+            
+        }
+        .hero h1 {
+            font-size: 36px;
+            text-align: center;
+            max-width: 90%;
+            margin: 0 auto;
+            padding: 0 20px;
+        }  
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+        nav a {
+            margin: 0 15px;
+            font-size: 18px;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        /* Hero Section */
+        .hero {
+            background-image: url('img/barbary-pirates-english-slaves.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+        .hero h1 {
+            font-size: 48px;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            position: relative;
+            z-index: 2;
+            margin-top: -50px;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .content div {
+            width: 48%;
+            margin-bottom: 20px;
+        }
+        .content img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+        nav a.active {
+            background-color: #007BFF;
+        }
+    </style>
 </head>
 <body>
-    <h1>Barbary Wars</h1>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="history.html">Research and Analysis</a>
+        <a href="worksheets.html">Worksheets</a>
+        <a href="quiz.html">Quiz</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1> Algiers and Its Role in the Barbary Wars: A Gateway to Conflict and Diplomacy </h1>
+    </div>
+
+    <div class="container">
+        <!-- Home Page Content -->
+        <div class="content">
+            <div>
+                <h2>Overview</h2>
+                <p> Algiers, a formidable power in the Mediterranean from the 16th to the 19th century, played a crucial role in shaping international politics through piracy, trade, and diplomacy. As a semi-autonomous province of the Ottoman Empire, Algiers maintained a delicate balance of power, leveraging its strategic position to exert influence over European and American maritime interests during the era of the Barbary Wars. This project explores how the city of Algiers remained loyal to the Ottomans while exercising significant autonomy.</p>
+                <p> One of the defining aspects of Algiers’ historical prominence was its association with the Barbary corsairs, who conducted raids across European coastlines and targeted merchant ships, capturing wealth and enslaving sailors. The economic and political benefits of these operations reinforced Algiers’ power but also strained its relations with European nations and the newly independent United States. In response to persistent demands for tribute and attacks on American vessels, the United States engaged in the Barbary Wars (1801–1805, 1815), marking one of the earliest challenges to its naval and diplomatic strength on the global stage.</p>
+                <p>Thus I will analyze Algiers' interactions with the Ottoman Empire, its reliance on maritime raids, and the geopolitical consequences of its conflicts with the United States. By examining first hand accounts, letters, conflicts, and Algiers' eventual decline under global pressure, we gain a deeper understanding of its role in Mediterranean history and its lasting impact on global diplomacy and trade. Through this exploration, we will uncover how an often unseen city like Algiers navigated a complex political landscape and maintained its dominance until its eventual colonization by France in 1830.</p>
+            </div>
+            <div>
+                <figure>
+                    <img src="img/GettyImages_173299819-f4e9883.jpg" alt="Pirates">
+                    <figcaption style="text-align: center; font-size: 14px; margin-top: 5px; color: #555;">
+                        From HistoryExtra
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Barbary Wars - Algiers. All rights reserved.</p>
+    </footer>
 </body>
 </html>
